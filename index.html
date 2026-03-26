@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌸 吉野山旅行計畫 2026.4</title>
+  <style>
+    :root {
+      --sakura: #f2a7bb;
+      --sakura-light: #fde8ef;
+      --sakura-deep: #d45f7f;
+      --green: #5a8a5e;
+      --green-light: #e8f5e9;
+      --brown: #7b5e57;
+      --brown-light: #f5ede8;
+      --navy: #2d4a7a;
+      --navy-light: #e8edf7;
+      --text: #3a2e2e;
+      --muted: #8a7070;
+      --white: #fffcfc;
+      --shadow: rgba(200, 120, 130, 0.15);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Hiragino Sans', 'Yu Gothic', 'Noto Sans TC', sans-serif;
+      background: #fff8fa;
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #f9c5d1 0%, #fde8ef 40%, #f0f8e8 100%);
+      text-align: center;
+      padding: 52px 24px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸';
+      position: absolute;
+      top: 10px; left: 0; right: 0;
+      font-size: 22px;
+      letter-spacing: 8px;
+      opacity: 0.35;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      color: var(--sakura-deep);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+    header .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--sakura-deep);
+      color: #fff;
+      font-size: 0.78rem;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-top: 12px;
+      letter-spacing: 0.1em;
+    }
+
+    /* ── TABLE OF CONTENTS ── */
+    .toc-wrapper {
+      max-width: 900px;
+      margin: 32px auto 0;
+      padding: 0 20px;
+    }
+    .toc-card {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 3px 18px var(--shadow);
+      overflow: hidden;
+    }
+    .toc-header {
+      background: linear-gradient(135deg, var(--sakura-deep), #e07898);
+      color: #fff;
+      padding: 14px 22px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+    .toc-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0;
+      list-style: none;
+    }
+    .toc-list li a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 20px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.93rem;
+      font-weight: 600;
+      border-bottom: 1px solid #f3e0e5;
+      border-right: 1px solid #f3e0e5;
+      transition: background 0.15s;
+    }
+    .toc-list li a:hover { background: var(--sakura-light); color: var(--sakura-deep); }
+    .toc-list li a .toc-icon { font-size: 1.2rem; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 20px 60px;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--sakura-deep);
+      margin: 48px 0 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--sakura);
+      scroll-margin-top: 20px;
+    }
+    .section-title .icon { font-size: 1.5rem; }
+
+    .section-sub {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin: 28px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-sub::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background: var(--sakura-deep);
+      border-radius: 2px;
+    }
+
+    /* ── NOTICE BOX ── */
+    .notice {
+      background: #fff8e1;
+      border-left: 4px solid #f4b942;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 28px;
+      font-size: 0.93rem;
+    }
+    .notice strong { color: #b07d10; }
+
+    /* ── DAY CARD ── */
+    .day-card {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 3px 16px var(--shadow);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .day-header {
+      padding: 14px 22px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+    .day-header.pink  { background: var(--sakura-light); color: var(--sakura-deep); }
+    .day-header.green { background: var(--green-light);  color: var(--green); }
+    .day-card-body { padding: 20px 22px; }
+
+    /* ── SCHEDULE TABLE ── */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .schedule-table th {
+      background: var(--sakura-light);
+      color: var(--sakura-deep);
+      padding: 8px 12px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .schedule-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid #f3e0e5;
+      vertical-align: top;
+    }
+    .schedule-table tr:last-child td { border-bottom: none; }
+    .schedule-table tr:hover td { background: #fff0f4; }
+    .time-cell {
+      white-space: nowrap;
+      font-weight: 700;
+      color: var(--sakura-deep);
+      width: 90px;
+    }
+    .place-cell { font-weight: 600; }
+    .note-cell { color: var(--muted); font-size: 0.88rem; }
+
+    /* ── TRANSPORT ── */
+    .transport-block {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 3px 16px var(--shadow);
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+    .transport-block h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--brown);
+      margin-bottom: 16px;
+    }
+    .route-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.93rem;
+      margin-bottom: 14px;
+    }
+    .route-step {
+      background: var(--brown-light);
+      color: var(--brown);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .route-arrow { color: var(--sakura-deep); font-size: 1.1rem; }
+    .transport-notes { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+    .transport-notes li { margin-left: 18px; list-style: disc; }
+
+    /* ── TRAIN TABLE ── */
+    .train-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+    .train-table th {
+      background: var(--navy-light);
+      color: var(--navy);
+      padding: 8px 10px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .train-table td {
+      padding: 9px 10px;
+      border-bottom: 1px solid #e8edf7;
+      vertical-align: middle;
+    }
+    .train-table tr:last-child td { border-bottom: none; }
+    .train-table tr:hover td { background: #f0f4ff; }
+    .train-time { font-weight: 700; color: var(--navy); white-space: nowrap; }
+    .train-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-express { background: #ff5722; color: #fff; }
+    .badge-rapid   { background: #ff9800; color: #fff; }
+    .badge-subway  { background: #1565c0; color: #fff; }
+    .transfer-row td { background: #fff9e1; font-weight: 600; color: #8b6914; }
+    .arrive-row td   { background: #e8f5e9; font-weight: 700; color: #2e7d32; }
+    .time-verify {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.83rem;
+      color: #856404;
+      margin-top: 14px;
+    }
+
+    /* ── RESTAURANT CARDS ── */
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+      gap: 18px;
+    }
+    .rest-card {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 3px 16px var(--shadow);
+      overflow: hidden;
+      transition: transform 0.15s;
+    }
+    .rest-card:hover { transform: translateY(-3px); }
+    .rest-card-header {
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .h-lunch    { background: #fde8ef; color: var(--sakura-deep); }
+    .h-dinner   { background: #e8edf7; color: var(--navy); }
+    .h-mountain { background: #e8f5e9; color: #2e7d32; }
+    .h-ramen    { background: #fff3e0; color: #e65100; }
+    .h-sake     { background: #ede7f6; color: #4527a0; }
+    .h-charcoal { background: #fbe9e7; color: #bf360c; }
+    .h-french   { background: #e8eaf6; color: #283593; }
+    .h-fish     { background: #e0f2f1; color: #00695c; }
+    .h-cafe     { background: #f1f8e9; color: #558b2f; }
+    .h-pasta    { background: #ede7f6; color: #512da8; }
+    .h-curry    { background: #fbe9e7; color: #d84315; }
+    .h-yakitori { background: #fff3e0; color: #e65100; }
+    .rest-card-body {
+      padding: 14px 16px;
+      font-size: 0.88rem;
+    }
+    .rest-card-body p { margin-bottom: 6px; }
+    .rest-card-body .label {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--muted);
+      min-width: 52px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 9px;
+      border-radius: 12px;
+      margin: 4px 3px 0 0;
+    }
+    .tag-pink   { background: var(--sakura-light); color: var(--sakura-deep); }
+    .tag-green  { background: var(--green-light);  color: var(--green); }
+    .tag-blue   { background: var(--navy-light);   color: var(--navy); }
+    .tag-purple { background: #ede7f6;              color: #4527a0; }
+    .tag-orange { background: #fff3e0;              color: #e65100; }
+    .tag-teal   { background: #e0f2f1;              color: #00695c; }
+    .rest-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      color: #fff;
+      background: #5a8a5e;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background 0.2s;
+    }
+    .rest-link:hover { background: #7ba47e; }
+
+    /* ── LOCAL BADGE ── */
+    .local-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #d45f7f;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    /* ── PACKING ── */
+    .packing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .pack-section {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 3px 16px var(--shadow);
+      overflow: hidden;
+    }
+    .pack-section-title {
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+    .pack-section-title.hiking   { background: var(--green-light);  color: var(--green); }
+    .pack-section-title.clothing { background: var(--sakura-light); color: var(--sakura-deep); }
+    .pack-section-title.food     { background: #fff8e1;              color: #b07d10; }
+    .pack-section-title.misc     { background: var(--brown-light);   color: var(--brown); }
+    .pack-section-title.doc      { background: #e8eaf6;              color: #3949ab; }
+    .pack-list { list-style: none; padding: 12px 16px 16px; }
+    .pack-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.88rem;
+      padding: 4px 0;
+      border-bottom: 1px dashed #f0e0e5;
+    }
+    .pack-list li:last-child { border-bottom: none; }
+    .pack-list li::before { content: '☐'; font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── TIPS / MEMO ── */
+    .tips-box {
+      background: var(--green-light);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+    .tips-box h4 { color: var(--green); margin-bottom: 10px; font-size: 1rem; }
+    .tips-box ul { margin-left: 18px; }
+    .tips-box li { margin-bottom: 5px; }
+    .memo-box {
+      background: #fff9f0;
+      border: 1px solid #ffe0b2;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+    .memo-box h4 { color: #e65100; margin-bottom: 12px; font-size: 1rem; }
+    .memo-box ul { margin-left: 18px; }
+    .memo-box li { margin-bottom: 6px; line-height: 1.7; }
+
+    /* ── MAP BUTTONS ── */
+    .map-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 20px 0 10px;
+    }
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 24px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .map-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .map-btn-google { background: #4285F4; color: #fff; }
+    .map-btn-yamap  { background: #2db36a; color: #fff; }
+    .map-embed {
+      width: 100%;
+      height: 340px;
+      border-radius: 14px;
+      border: none;
+      margin-top: 16px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.1);
+    }
+    /* ── TRAIL MAP ── */
+    .trailmap-section {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: 0 3px 16px var(--shadow);
+      padding: 28px 24px;
+      margin-bottom: 28px;
+    }
+    .trailmap-section svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    .trailmap-note {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #856404;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 0.82rem;
+      border-top: 1px solid #f3d5db;
+      margin-top: 20px;
+    }
+
+    a { color: inherit; }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .schedule-table { font-size: 0.82rem; }
+      .note-cell { display: none; }
+      .toc-list { grid-template-columns: 1fr 1fr; }
+      .rest-card-header { flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── SAKURA PETALS ── */
+    #sakura-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* ── BACK TO TOP BUTTON ── */
+    #back-to-top {
+      position: fixed;
+      right: 22px;
+      bottom: 30px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--sakura-deep);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 16px rgba(212, 95, 127, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.3s, transform 0.3s, background 0.2s;
+      z-index: 9999;
+      text-decoration: none;
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    #back-to-top:hover {
+      background: #c04a6a;
+    }
+    #back-to-top::after {
+      content: '';
+      position: absolute;
+      top: -3px; left: -3px; right: -3px; bottom: -3px;
+      border-radius: 50%;
+      border: 2px solid rgba(212, 95, 127, 0.4);
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.3); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header>
+  <canvas id="sakura-canvas"></canvas>
+  <h1>🌸 吉野山旅行計畫</h1>
+  <div class="subtitle">2026年 4月 2日 ～ 4月 4日｜京都 × 吉野山</div>
+  <div class="badge">情侶同行 · 賞花 · 登山</div>
+</header>
+
+<!-- ════ TOC ════ -->
+<div class="toc-wrapper">
+  <div class="toc-card">
+    <div class="toc-header">📋 目錄 — 點選快速跳轉</div>
+    <ul class="toc-list">
+      <li><a href="#notice"><span class="toc-icon">⚠️</span> 重要提醒</a></li>
+      <li><a href="#itinerary"><span class="toc-icon">🗓</span> 行程表</a></li>
+      <li><a href="#transport"><span class="toc-icon">🚃</span> 交通資訊</a></li>
+      <li><a href="#timetable"><span class="toc-icon">🕐</span> 電車時刻表</a></li>
+      <li><a href="#restaurants"><span class="toc-icon">🍽</span> 餐廳介紹</a></li>
+      <li><a href="#local-picks"><span class="toc-icon">🍶</span> 地元口袋名單</a></li>
+      <li><a href="#trailmap"><span class="toc-icon">🗺</span> 登山地圖</a></li>
+      <li><a href="#packing"><span class="toc-icon">🎒</span> 打包清單</a></li>
+      <li><a href="#memo"><span class="toc-icon">📌</span> 備忘錄</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ════ 重要提示 ════ -->
+  <div id="notice" class="section-title"><span class="icon">⚠️</span> 重要提醒</div>
+  <div class="notice">
+    <strong>🚧 女人結界：</strong>大峯奧駈道中途雖有「女人結界」，但本次目的地<strong>足摺茶屋跡</strong>位於結界之前，女友可以一起走，完全沒有問題。
+  </div>
+
+  <!-- ════ 行程表 ════ -->
+  <div id="itinerary" class="section-title"><span class="icon">🗓</span> 行程表</div>
+
+  <div class="day-card">
+    <div class="day-header pink">4月 2日（週四）或 4月 3日（週五）｜女友抵達日 · 京都散策</div>
+    <div class="day-card-body">
+      <table class="schedule-table">
+        <thead>
+          <tr><th>時間</th><th>地點 / 活動</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time-cell">午餐</td>
+            <td class="place-cell">🍽 <a href="https://tabelog.com/en/kyoto/A2601/A260201/26025098/" target="_blank" style="color:var(--sakura-deep)">ますや</a>（洋食食堂）</td>
+            <td class="note-cell">四條烏丸・仏光寺旁，昭和復古風，L字型吧台僅6席，全品平實</td>
+          </tr>
+          <tr>
+            <td class="time-cell">下午</td>
+            <td class="place-cell">京都市區散步</td>
+            <td class="note-cell">四條烏丸・祇園周邊自由活動</td>
+          </tr>
+          <tr>
+            <td class="time-cell">晚餐</td>
+            <td class="place-cell">🥩 <a href="https://gyukatsu-kyotokatsugyu.com/" target="_blank" style="color:var(--navy)">牛カツ 京都勝牛</a> 四条烏丸SUINA室町店</td>
+            <td class="note-cell">2026年2月新開幕，京都名物牛かつ専門店，外皮酥脆、內裡半生火候</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="day-card">
+    <div class="day-header green">4月 4日（週六）｜吉野山賞櫻 ＋ 大峯奧駈道登山</div>
+    <div class="day-card-body">
+      <table class="schedule-table">
+        <thead>
+          <tr><th>時間</th><th>地點</th><th>備註</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time-cell">05:31</td>
+            <td class="place-cell">🚇 烏丸御池 出發</td>
+            <td class="note-cell">地下鐵烏丸線 始發（南行・往竹田方向）</td>
+          </tr>
+          <tr>
+            <td class="time-cell">05:42頃</td>
+            <td class="place-cell">🔀 竹田 換乘近鉄</td>
+            <td class="note-cell">由地下鐵換乘近鐵京都線（往橿原神宮前方向）</td>
+          </tr>
+          <tr>
+            <td class="time-cell">06:05頃</td>
+            <td class="place-cell">🚆 竹田 発（近鉄急行）</td>
+            <td class="note-cell">近鐵京都線急行 往橿原神宮前（近鐵京都站 06:00 發車）</td>
+          </tr>
+          <tr>
+            <td class="time-cell">07:13頃</td>
+            <td class="place-cell">🔀 橿原神宮前 換乘吉野線</td>
+            <td class="note-cell">換乘近鐵吉野線 往吉野方向</td>
+          </tr>
+          <tr>
+            <td class="time-cell">08:00頃</td>
+            <td class="place-cell">📍 吉野駅 到着</td>
+            <td class="note-cell">登山開始！🌸</td>
+          </tr>
+          <tr>
+            <td class="time-cell">08:30</td>
+            <td class="place-cell">🏯 金峯山寺（中千本）</td>
+            <td class="note-cell">下千本・中千本山坡賞花 🌸</td>
+          </tr>
+          <tr>
+            <td class="time-cell">09:15</td>
+            <td class="place-cell">📸 花矢倉展望台</td>
+            <td class="note-cell">「一目千本」全景，必拍！</td>
+          </tr>
+          <tr>
+            <td class="time-cell">09:30</td>
+            <td class="place-cell">🌸 高城山（上千本）</td>
+            <td class="note-cell">上千本賞花區域</td>
+          </tr>
+          <tr>
+            <td class="time-cell">09:45</td>
+            <td class="place-cell">🚌 奧千本口</td>
+            <td class="note-cell">春季限定巴士，可搭巴士省腳力</td>
+          </tr>
+          <tr>
+            <td class="time-cell">10:00</td>
+            <td class="place-cell">⛩ 金峯神社</td>
+            <td class="note-cell">奧千本，正式登山道起點</td>
+          </tr>
+          <tr>
+            <td class="time-cell">10:15</td>
+            <td class="place-cell">🏔 青根ヶ峰（858m）</td>
+            <td class="note-cell">吉野山最高峰</td>
+          </tr>
+          <tr>
+            <td class="time-cell">11:30</td>
+            <td class="place-cell">四寸岩山</td>
+            <td class="note-cell">漸入深山，注意腳步</td>
+          </tr>
+          <tr>
+            <td class="time-cell">12:00–12:30</td>
+            <td class="place-cell">🎯 足摺茶屋跡（折返點）</td>
+            <td class="note-cell"><strong>午餐＆休息</strong>，女人結界前，折返點</td>
+          </tr>
+          <tr>
+            <td class="time-cell">14:00</td>
+            <td class="place-cell">四寸岩山（回程）</td>
+            <td class="note-cell">下山路段</td>
+          </tr>
+          <tr>
+            <td class="time-cell">14:45</td>
+            <td class="place-cell">青根ヶ峰</td>
+            <td class="note-cell"></td>
+          </tr>
+          <tr>
+            <td class="time-cell">15:00</td>
+            <td class="place-cell">奧千本 → 中千本</td>
+            <td class="note-cell">邊下山邊賞花 🌸</td>
+          </tr>
+          <tr>
+            <td class="time-cell">16:00</td>
+            <td class="place-cell">🏯 金峯山寺</td>
+            <td class="note-cell">中千本最美時段</td>
+          </tr>
+          <tr>
+            <td class="time-cell">16:30</td>
+            <td class="place-cell">🚃 吉野駅 搭車</td>
+            <td class="note-cell">搭乘近鐵吉野線 往橿原神宮前方向</td>
+          </tr>
+          <tr>
+            <td class="time-cell">17:20頃</td>
+            <td class="place-cell">橿原神宮前 換乘京都線</td>
+            <td class="note-cell">近鐵京都線急行 往竹田方向</td>
+          </tr>
+          <tr>
+            <td class="time-cell">18:43頃</td>
+            <td class="place-cell">📍 烏丸御池 抵達</td>
+            <td class="note-cell"></td>
+          </tr>
+          <tr>
+            <td class="time-cell">19:00〜</td>
+            <td class="place-cell">🍜 <a href="https://tabelog.com/en/kyoto/A2601/A260201/26029810/" target="_blank" style="color:#e65100">麺屋 猪一 離れ</a></td>
+            <td class="note-cell">山後犒賞！米其林必比登推薦，自製麵條清湯拉麵</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tips-box" style="margin-top:18px;">
+        <h4>🥾 登山補充說明</h4>
+        <ul>
+          <li>金峯神社 → 足摺宿 往返約 <strong>10.8km</strong>，含休憩合計約 5 小時 18 分</li>
+          <li>加上吉野駅到金峯神社的往返，全程約 <strong>8～10 小時</strong></li>
+          <li>大天井岳前後有急登，<strong>務必穿能護住腳踝的登山鞋</strong></li>
+          <li>4月初吉野山人潮極多，建議早出發避開金峯山寺前後路段的擁擠</li>
+          <li>午餐建議帶便當，足摺茶屋跡附近有避風處可休息</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════ 交通資訊 ════ -->
+  <div id="transport" class="section-title"><span class="icon">🚃</span> 交通資訊</div>
+
+  <div class="transport-block">
+    <h3>▶ 去程：烏丸御池 → 吉野駅（約 2 小時 30 分）</h3>
+    <div class="route-flow">
+      <span class="route-step">🚇 烏丸御池</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">地下鐵烏丸線</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🔀 竹田 換乘</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">近鐵京都線急行</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🔀 橿原神宮前 換乘</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">近鐵吉野線</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🎌 吉野站</span>
+    </div>
+    <ul class="transport-notes">
+      <li>竹田站有地鐵與近鐵直通運行，換乘僅需移動至對側月台即可</li>
+      <li>近鐵「吉野自由車票」（竹田↔吉野來回＋山內巴士無限搭乘）最划算，可在窗口購買</li>
+      <li>4月賞櫻旺季車廂擁擠，請提早前往月台排隊候車</li>
+    </ul>
+  </div>
+
+  <div class="transport-block">
+    <h3>◀ 返程：吉野駅 → 烏丸御池</h3>
+    <div class="route-flow">
+      <span class="route-step">🎌 吉野站</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">近鐵吉野線</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🔀 橿原神宮前 換乘</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">近鐵京都線急行</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🔀 竹田 換乘</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">地下鐵烏丸線</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🚇 烏丸御池</span>
+    </div>
+    <ul class="transport-notes">
+      <li>16:30 吉野出發 → 預計 18:43 抵達烏丸御池</li>
+    </ul>
+  </div>
+
+  <!-- ════ 電車時刻表 ════ -->
+  <div id="timetable" class="section-title"><span class="icon">🕐</span> 電車時刻表（4/4 往復）</div>
+
+  <div class="transport-block">
+    <h3>▶ 去程：4月4日（週六）— 烏丸御池 始發路線</h3>
+    <table class="train-table">
+      <thead>
+        <tr><th>時刻</th><th>駅</th><th>列車</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="train-time">05:31</td>
+          <td><strong>烏丸御池 発</strong></td>
+          <td><span class="train-badge badge-subway">地下鉄烏丸線</span></td>
+          <td>南行 竹田・近鉄方面 始発</td>
+        </tr>
+        <tr>
+          <td class="train-time">05:34</td>
+          <td>四条 通過</td>
+          <td><span class="train-badge badge-subway">地下鉄烏丸線</span></td>
+          <td>—</td>
+        </tr>
+        <tr>
+          <td class="train-time">05:38</td>
+          <td>（地下鐵）京都 通過</td>
+          <td><span class="train-badge badge-subway">地下鐵烏丸線</span></td>
+          <td>※ 與 JR・近鐵京都為不同車站</td>
+        </tr>
+        <tr class="transfer-row">
+          <td class="train-time">05:42頃</td>
+          <td><strong>🔀 竹田 抵達 / 換乘</strong></td>
+          <td>—</td>
+          <td>前往近鐵京都線月台</td>
+        </tr>
+        <tr>
+          <td class="train-time">06:05頃</td>
+          <td><strong>竹田 出發</strong></td>
+          <td><span class="train-badge badge-express">近鐵 急行</span></td>
+          <td>往橿原神宮前（近鐵京都站 06:00 發急行通過）</td>
+        </tr>
+        <tr>
+          <td class="train-time">07:00頃</td>
+          <td>大和西大寺 通過</td>
+          <td><span class="train-badge badge-express">近鐵 急行</span></td>
+          <td>—</td>
+        </tr>
+        <tr class="transfer-row">
+          <td class="train-time">07:13頃</td>
+          <td><strong>🔀 橿原神宮前 抵達 / 換乘</strong></td>
+          <td>—</td>
+          <td>前往近鐵吉野線月台</td>
+        </tr>
+        <tr>
+          <td class="train-time">07:20〜07:30頃</td>
+          <td><strong>橿原神宮前 出發</strong></td>
+          <td><span class="train-badge badge-rapid">近鐵吉野線</span></td>
+          <td>往吉野（急行或特急 — 出發前確認）</td>
+        </tr>
+        <tr class="arrive-row">
+          <td class="train-time">08:00〜08:10頃</td>
+          <td><strong>🎌 吉野 抵達</strong></td>
+          <td>—</td>
+          <td>✅ 開始登山！步行前往賞花區</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="time-verify">
+      ⚠️ <strong>時刻為概算值。</strong>2026 年 3 月 14 日班次改正後，出發前請務必確認最新時刻。
+      👉 <a href="https://www.kintetsu.co.jp/tetsudo/zenekijikoku.html" target="_blank" style="color:var(--navy)">近鐵官方時刻表</a>
+    </div>
+  </div>
+
+  <div class="transport-block">
+    <h3>◀ 返程：4月4日（週六）— 吉野出發</h3>
+    <table class="train-table">
+      <thead>
+        <tr><th>時刻</th><th>車站</th><th>列車</th><th>備考</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="train-time">16:30頃</td>
+          <td><strong>吉野 出發</strong></td>
+          <td><span class="train-badge badge-rapid">近鐵吉野線</span></td>
+          <td>往橿原神宮前方向</td>
+        </tr>
+        <tr class="transfer-row">
+          <td class="train-time">17:20頃</td>
+          <td><strong>🔀 橿原神宮前 抵達 / 換乘</strong></td>
+          <td>—</td>
+          <td>前往近鐵京都線月台</td>
+        </tr>
+        <tr>
+          <td class="train-time">17:30頃</td>
+          <td><strong>橿原神宮前 出發</strong></td>
+          <td><span class="train-badge badge-express">近鐵 急行</span></td>
+          <td>往竹田・京都方向</td>
+        </tr>
+        <tr class="transfer-row">
+          <td class="train-time">18:35頃</td>
+          <td><strong>🔀 竹田 抵達 / 換乘</strong></td>
+          <td>—</td>
+          <td>換乘地下鐵烏丸線 北行</td>
+        </tr>
+        <tr class="arrive-row">
+          <td class="train-time">18:43頃</td>
+          <td><strong>🚇 烏丸御池 抵達</strong></td>
+          <td>—</td>
+          <td>✅ 前往晚餐！</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="time-verify">
+      ⚠️ 時刻為概算值。春季吉野可能加開臨時列車，出發前請至官方網站確認。
+    </div>
+  </div>
+
+  <!-- ════ 纜車資訊 ════ -->
+  <div class="transport-block" style="border-left: 4px solid var(--sakura-deep);">
+    <h3>🚡 吉野山纜車（吉野ロープウェイ）</h3>
+    <div class="route-flow">
+      <span class="route-step">🚶 近鐵吉野站（步行3分）</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step">🚡 千本口站（下站）</span>
+      <span class="route-arrow">→</span>
+      <span class="route-step" style="background:var(--sakura-light); color:var(--sakura-deep);">🌸 吉野山站（上站）</span>
+    </div>
+    <table class="train-table" style="margin-bottom:14px;">
+      <thead>
+        <tr><th>區間</th><th>所需時間</th><th>大人票價</th><th>兒童票價</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>單程（千本口 ↔ 吉野山）</td>
+          <td>約 3 分鐘</td>
+          <td class="train-time">¥450</td>
+          <td>¥230</td>
+        </tr>
+        <tr>
+          <td>來回（Round Trip）</td>
+          <td>—</td>
+          <td class="train-time">¥880</td>
+          <td>¥450</td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="train-table" style="margin-bottom:14px;">
+      <thead>
+        <tr><th>時段</th><th>運行班次（春季賞花期）</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>首班車</td>
+          <td>約 07:30（春季加開）</td>
+        </tr>
+        <tr>
+          <td>末班車</td>
+          <td>約 17:30</td>
+        </tr>
+        <tr>
+          <td>班次間隔</td>
+          <td>約 15〜20 分鐘一班</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="transport-notes">
+      <li>纜車從吉野駅步行 <strong>約3分鐘</strong> 可抵達千本口下站，單程僅需 3 分鐘即達中千本賞花區</li>
+      <li>⚠️ 4月賞花旺季纜車排隊極長（有時超過 1 小時），若不想等可選擇步行上山（約 20 分鐘）</li>
+      <li>⚠️ 纜車曾於 2019 年起暫停運行檢修，<strong>出發前請務必確認目前是否恢復運行</strong></li>
+      <li>📞 纜車詳情：<a href="https://yoshino-kankou.jp/spot/other/000038.html" target="_blank" style="color:var(--navy)">吉野 Visitors Bureau｜纜車介紹</a></li>
+      <li>🌸 2026年觀櫻期交通資訊：<a href="https://www.town.yoshino.nara.jp/promotion/kankojoho/yoshinoyama/ohanamijoho/1414.html" target="_blank" style="color:var(--navy)">吉野町公式｜觀桜期交通管制</a>（含最新纜車運行狀態）</li>
+    </ul>
+  </div>
+
+  <!-- ════ 春季限定巴士 ════ -->
+  <div class="transport-block" style="border-left: 4px solid var(--green);">
+    <h3>🚌 奥千本口 春季限定巴士</h3>
+    <p style="margin:0 0 12px; color:#555;">賞花期間限定行駛的接駁巴士，可直達奥千本口，適合健行後搭乘下山。</p>
+    <table class="timetable">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>內容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>運行期間</td>
+          <td>2026年3月21日（六）〜 5月6日（三）毎日運行</td>
+        </tr>
+        <tr>
+          <td>路線</td>
+          <td>竹林院前 ⇔ 金峯神社口 ⇔ 奥千本口</td>
+        </tr>
+        <tr>
+          <td>票價</td>
+          <td>單程 <strong>¥550</strong>／人（僅收現金）</td>
+        </tr>
+        <tr>
+          <td>詳細時刻表</td>
+          <td>請至官方網站確認（賞花期時刻表每年調整）</td>
+        </tr>
+      </tbody>
+    </table>
+    <ul class="transport-notes">
+      <li>🌸 此為春季賞花期間限定班次，非全年運行</li>
+      <li>⚠️ 賞花旺季（尤其4月上旬）巴士可能非常擁擠，請預留候車時間</li>
+      <li>⚠️ 高城山展望台停靠站於交通管制期間<strong>暫停服務</strong>，終點站為奥千本口</li>
+      <li>💡 健行結束後可於奥千本口搭乘本巴士返回竹林院前，節省腿力</li>
+      <li>🔗 時刻表詳情：<a href="https://yoshinoyama-kankou.com/accsess/" target="_blank" style="color:var(--navy)">吉野山觀光案內所｜交通アクセス</a></li>
+    </ul>
+  </div>
+
+  <!-- ════ 行程內餐廳 ════ -->
+  <div id="restaurants" class="section-title"><span class="icon">🍽</span> 餐廳介紹</div>
+
+  <div class="section-sub">📅 行程安排餐廳</div>
+  <div class="restaurant-grid">
+
+    <!-- ますや -->
+    <div class="rest-card">
+      <div class="rest-card-header h-lunch">4/2 或 4/3 — 午餐</div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;"><a href="https://tabelog.com/en/kyoto/A2601/A260201/26025098/" target="_blank">ますや（洋食食堂）</a></p>
+        <p><span class="label">📍 地址</span>京都市下京区杉屋町265</p>
+        <p><span class="label">🕐 營業</span>平日 11:00〜18:30 / 週六 11:00〜17:00</p>
+        <p><span class="label">🔴 公休</span>週日・假日</p>
+        <p style="margin-top:8px; color:var(--muted);">超過 50 年的老鋪洋食堂。L字型吧台僅6席，昭和時代的穿越感十足，menu 全部平實，是京都上班族中午最愛去的那種店。</p>
+        <div>
+          <span class="tag tag-pink">昭和老鋪</span>
+          <span class="tag tag-pink">吧台席</span>
+          <span class="tag tag-pink">上班族御用</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=ますや+京都市下京区杉屋町265" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- 牛カツ勝牛 -->
+    <div class="rest-card">
+      <div class="rest-card-header h-dinner">4/2 或 4/3 — 晚餐</div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;"><a href="https://gyukatsu-kyotokatsugyu.com/" target="_blank">牛カツ 京都勝牛</a><br>四条烏丸 SUINA室町店</p>
+        <p><span class="label">📍 位置</span>四条烏丸 SUINA室町 1F</p>
+        <p><span class="label">🆕 開幕</span>2026年2月 新開幕</p>
+        <p style="margin-top:8px; color:var(--muted);">外皮酥脆、內裡半生火候，搭配多種沾醬的京都名物牛かつ。每桌附一個小烤爐自己烤到喜歡的熟度，視覺感很好。非常日本，非常下飯。</p>
+        <div>
+          <span class="tag tag-blue">京都名物</span>
+          <span class="tag tag-blue">牛かつ</span>
+          <span class="tag tag-blue">自烤體驗</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=牛カツ+京都勝牛+四条烏丸+SUINA室町" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- 山中便當 -->
+    <div class="rest-card">
+      <div class="rest-card-header h-mountain">4/4 — 午餐（登山中）</div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">🍱 山中便當（自備）</p>
+        <p><span class="label">📍 地點</span>足摺茶屋跡（足摺宿）折返點</p>
+        <p style="margin-top:8px; color:var(--muted);">在吉野駅周邊的便利商店購買飯糰和便當帶上山。足摺茶屋跡有避風的石牆角落，視野遼闊，邊吃邊看深山的靜謐感，比任何餐廳都更難忘。</p>
+        <div>
+          <span class="tag tag-green">山中折返點</span>
+          <span class="tag tag-green">自然景色</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 麺屋猪一離れ -->
+    <div class="rest-card">
+      <div class="rest-card-header h-ramen">4/4 — 晚餐（山後犒賞）</div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;"><a href="https://tabelog.com/en/kyoto/A2601/A260201/26029810/" target="_blank">麺屋 猪一 離れ</a></p>
+        <p><span class="label">📍 位置</span>四条烏丸 仏光寺南側（徒步6分）</p>
+        <p><span class="label">🏅 獎項</span>ミシュランビブグルマン 2021 / ラーメン百名店 2023</p>
+        <p style="margin-top:8px; color:var(--muted);">鴨出汁搭配自家製麺，追い鰹そば 白醤油是招牌。走了10小時山路後，一碗清澈金色的湯頭暖進身體 — 這是行程最完美的句點。</p>
+        <div>
+          <span class="tag tag-orange">ミシュラン</span>
+          <span class="tag tag-orange">自家製麺</span>
+          <span class="tag tag-orange">清湯系</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=麺屋+猪一+離れ+京都市中京区仏光寺" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════ 地元口袋名單 ════ -->
+  <div id="local-picks" class="section-title"><span class="icon">🍶</span> 地元口袋名單</div>
+
+  <div class="notice" style="background:#f3f0ff; border-color:#9c72d4;">
+    <strong style="color:#6a3fb5;">✦ 精選 9 家京都本地人愛店：</strong>以下九家是京都在地美食家的私房推薦，融合傳統與創新，每一家都代表京都飲食文化的不同面向。
+  </div>
+
+  <div class="restaurant-grid">
+
+    <!-- ごはんとカフェとお酒 日常茶飯+ -->
+    <div class="rest-card">
+      <div class="rest-card-header h-cafe">
+        定食カフェ
+        <span class="local-badge">精選</span>
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">ごはんとカフェとお酒<br>日常茶飯+</p>
+        <p><span class="label">📍 住所</span>京都市中京区桝屋町55 三条高倉白鳥ビル3F</p>
+        <p><span class="label">🚇 交通</span>烏丸御池駅 徒歩3分</p>
+        <p><span class="label">🕐 營業</span>12:00〜15:00、18:00〜21:00、水曜休</p>
+        <p style="margin-top:8px; color:var(--muted);">以南丹產「日日光」米製作的家常定食套餐為招牌。時尚沉穩的空間深受上班族喜愛，是京都 OL 每天午餐的秘密據點。</p>
+        <div>
+          <span class="tag tag-green">定食咖啡廳</span>
+          <span class="tag tag-green">上班族最愛</span>
+          <span class="tag tag-green">隱藏名店</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=日常茶飯%2B+京都市中京区桝屋町55" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- 和釀良麺 Sugari -->
+    <div class="rest-card">
+      <div class="rest-card-header h-ramen">
+        豬雜沾麵
+        <span class="local-badge">精選</span>
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">和釀良麺 Sugari<br>（すがり）</p>
+        <p><span class="label">📍 住所</span>京都市中京区観音堂町471</p>
+        <p><span class="label">🚇 交通</span>四条駅 徒歩2分（路地裏）</p>
+        <p><span class="label">🕐 營業</span>11:30〜14:50、18:00〜21:50、年末年始のみ休</p>
+        <p style="margin-top:8px; color:var(--muted);">百年京町家中的豬雜沾麵專門店。燒烤豬雜的鮮甜融入濃厚高湯，搭配中粗麵條，榮獲拉麵 WEST 百名店認定。</p>
+        <div>
+          <span class="tag tag-orange">豬雜沾麵</span>
+          <span class="tag tag-orange">京町家</span>
+          <span class="tag tag-orange">百名店認定</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=和醸良麺+すがり+京都市中京区観音堂町471" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- ビリヤニ専門店 INDIA GATE -->
+    <div class="rest-card">
+      <div class="rest-card-header h-curry">
+        印度料理
+        <span class="local-badge">精選</span>
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">ビリヤニ専門店<br>INDIA GATE</p>
+        <p><span class="label">📍 住所</span>京都市中京区天神山町271</p>
+        <p><span class="label">🚇 交通</span>烏丸駅 徒歩5分</p>
+        <p><span class="label">🕐 營業</span>11:30〜21:00（水曜休）</p>
+        <p style="margin-top:8px; color:var(--muted);">由音樂家老闆開設的比亞尼飯專門店。以鯛魚高湯特製的雞肉比亞尼飯是招牌，道地口味被讚「連印度人都著迷」。</p>
+        <div>
+          <span class="tag tag-orange">比亞尼飯專門</span>
+          <span class="tag tag-orange">鯛魚高湯</span>
+          <span class="tag tag-orange">個性獨特</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=INDIA+GATE+ビリヤニ専門店+京都市中京区天神山町271" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- 京都四條くをん -->
+    <div class="rest-card">
+      <div class="rest-card-header h-yellow" style="background:#fff8e1; color:#b07d10;">
+        咖哩烏龍麵
+        <span class="local-badge">精選</span>
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">京都四條くをん</p>
+        <p><span class="label">📍 住所</span>京都市中京区新町通四条上ル小結棚町420</p>
+        <p><span class="label">🚇 交通</span>四条駅 徒歩5分</p>
+        <p><span class="label">🕐 營業</span>11:00〜14:30、17:00〜20:30</p>
+        <p style="margin-top:8px; color:var(--muted);">改建自舊綢緞布店的京町家。招牌是調配 20 種以上香料的雞肉咖哩烏龍麵，以「同時享受烏龍麵與咖哩雙重美味」為獨特概念。</p>
+        <div>
+          <span class="tag tag-orange">咖哩烏龍麵</span>
+          <span class="tag tag-orange">京町家</span>
+          <span class="tag tag-orange">20種香料</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=京都四条くをん+京都市中京区新町通四条上ル" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- café marble 仏光寺店 -->
+    <div class="rest-card">
+      <div class="rest-card-header h-cafe">
+        京町家咖啡廳
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">café marble<br>仏光寺店</p>
+        <p><span class="label">📍 住所</span>京都市下京区仏光寺通高倉東入ル西前町378</p>
+        <p><span class="label">🚇 交通</span>四条駅 徒歩4分</p>
+        <p><span class="label">🕐 營業</span>週一至六 11:00〜21:00、週日 11:00〜20:00、每月最後週三公休</p>
+        <p style="margin-top:8px; color:var(--muted);">改裝自 120 年京町家的挑高咖啡廳。手工鹹派與塔派是招牌，土牆、日式坪庭、木質吧台，充滿京都風情的獨特空間。</p>
+        <div>
+          <span class="tag tag-green">120年老町家</span>
+          <span class="tag tag-green">手工鹹派</span>
+          <span class="tag tag-green">挑高坪庭</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=cafe+marble+仏光寺店+京都市下京区仏光寺通" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- BIGOLI 京都本店 -->
+    <div class="rest-card">
+      <div class="rest-card-header h-pasta">
+        義式肉醬麵專門
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">BIGOLI<br>京都本店</p>
+        <p><span class="label">📍 住所</span>京都市中京区阪東屋町664-7</p>
+        <p><span class="label">🚇 交通</span>四条烏丸 徒歩1分</p>
+        <p><span class="label">🕐 營業</span>11:00〜23:00（每月第1個週二公休）</p>
+        <p style="margin-top:8px; color:var(--muted);">日本首家波隆那肉醬麵專門店。使用「賞味期限僅10分鐘」的現做生麵條，午餐只提供一種選擇的清爽概念。晚上另有100種葡萄酒無限暢飲套餐。</p>
+        <div>
+          <span class="tag tag-purple">肉醬麵專門</span>
+          <span class="tag tag-purple">現做生麵</span>
+          <span class="tag tag-purple">10分鐘賞味</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=BIGOLI+ボロネーゼ専門店+京都本店+中京区阪東屋町" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- SPICE CHAMBER -->
+    <div class="rest-card">
+      <div class="rest-card-header h-curry">
+        肉末咖哩
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">SPICE CHAMBER<br>（スパイスチャンバー）</p>
+        <p><span class="label">📍 住所</span>京都市下京区室町綾小路下る白楽天町502 福井ビル1F</p>
+        <p><span class="label">🚇 交通</span>烏丸駅 徒歩2分</p>
+        <p><span class="label">🕐 營業</span>11:30〜15:00 / 週二至五 18:00〜21:00（週日・假日公休）</p>
+        <p style="margin-top:8px; color:var(--muted);">菜單只有一款肉末咖哩，概念極為乾脆。榮獲米其林必比登推薦及咖哩 WEST 百名店認定，14 席小店天天座無虛席。</p>
+        <div>
+          <span class="tag tag-orange">米其林必比登</span>
+          <span class="tag tag-orange">只賣肉末咖哩</span>
+          <span class="tag tag-orange">14席</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=スパイスチャンバー+SPICE+CHAMBER+京都+室町綾小路" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- 祇園 たつみ -->
+    <div class="rest-card">
+      <div class="rest-card-header h-sake">
+        戶外立食居酒屋
+        <span class="local-badge">精選</span>
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">祇園 たつみ</p>
+        <p><span class="label">📍 住所</span>京都市東山区末吉町77-6（白川沿い）</p>
+        <p><span class="label">🚇 交通</span>祇園四条駅 徒步5分</p>
+        <p><span class="label">🕐 營業</span>17:00〜22:00（不定休）</p>
+        <p style="margin-top:8px; color:var(--muted);">在祇園白川河畔垂柳下喝酒的傳說立食攤。沒有椅子，大家就這樣站著、以京都夜景為背景，配著串炸、烤雞，喝著生啤酒——這才是真正的京都下班風景。</p>
+        <div>
+          <span class="tag tag-purple">戶外立食</span>
+          <span class="tag tag-purple">白川河畔</span>
+          <span class="tag tag-purple">傳說攤位</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=祇園たつみ+京都市東山区末吉町77" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+    <!-- 京極スタンド -->
+    <div class="rest-card">
+      <div class="rest-card-header h-sake">
+        昭和復古立食酒場
+      </div>
+      <div class="rest-card-body">
+        <p style="font-size:1rem; font-weight:700; margin-bottom:8px;">新京極スタンド<br>（京極スタンド）</p>
+        <p><span class="label">📍 住所</span>京都市中京区新京極通四条上ル中之町546-2</p>
+        <p><span class="label">🚇 交通</span>四条駅 徒步2分（新京極商店街內）</p>
+        <p><span class="label">🕐 營業</span>11:00〜22:30（不定休）</p>
+        <p style="margin-top:8px; color:var(--muted);">1925年創業、百年老店。沒有椅子，大家就這樣站著喝瓶啤酒、配豬排三明治和水煮蛋。生啤¥500、小食¥200起，人均¥800〜1,000。喧鬧的新京極旁，藏著最道地的京都平民下班風景。</p>
+        <div>
+          <span class="tag tag-blue">1925年創業</span>
+          <span class="tag tag-blue">立食百年老店</span>
+          <span class="tag tag-blue">人均¥1,000</span>
+        </div>
+        <a class="rest-link" href="https://maps.google.com/?q=京極スタンド+京都市中京区新京極通四条上ル" target="_blank">🗺 在地圖查看</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ════ 登山地圖 ════ -->
+  <div id="trailmap" class="section-title"><span class="icon">🗺</span> 登山地圖</div>
+
+  <div class="trailmap-section">
+    <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+      <!-- 背景 -->
+      <rect width="1000" height="500" fill="#f8f5f0"/>
+
+      <!-- 標題 -->
+      <text x="500" y="35" font-size="24" font-weight="700" text-anchor="middle" fill="#d45f7f">
+        4月4日 大峯奧駈道登山路線圖
+      </text>
+
+      <!-- 登山段路線（綠色漸層） -->
+      <defs>
+        <linearGradient id="elevGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#e8f5e9;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#5a8a5e;stop-opacity:0.2" />
+        </linearGradient>
+        <linearGradient id="flowerGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" style="stop-color:#fde8ef;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#d45f7f;stop-opacity:0.2" />
+        </linearGradient>
+      </defs>
+
+      <!-- 海拔背景區域 -->
+      <path d="M 50 450 Q 200 420 250 350 Q 350 250 500 200 Q 700 180 800 200 Q 900 220 950 280 L 950 450 Z" fill="url(#elevGrad)" stroke="none"/>
+
+      <!-- 賞花區域背景 -->
+      <path d="M 50 450 Q 200 420 250 350 L 250 450 Z" fill="url(#flowerGrad)" stroke="none"/>
+
+      <!-- 水平線標記（海拔指示） -->
+      <line x1="20" y1="430" x2="950" y2="430" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+      <text x="15" y="435" font-size="11" fill="#999">約230m</text>
+
+      <line x1="20" y1="350" x2="950" y2="350" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+      <text x="15" y="355" font-size="11" fill="#999">約650m</text>
+
+      <line x1="20" y1="200" x2="950" y2="200" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+      <text x="15" y="205" font-size="11" fill="#999">約1235m</text>
+
+      <!-- 段落標籤 -->
+      <text x="150" y="100" font-size="13" font-weight="700" fill="#d45f7f" text-anchor="middle">🌸 賞花段</text>
+      <line x1="100" y1="110" x2="200" y2="110" stroke="#d45f7f" stroke-width="2"/>
+
+      <text x="550" y="100" font-size="13" font-weight="700" fill="#5a8a5e" text-anchor="middle">🥾 登山段</text>
+      <line x1="500" y1="110" x2="600" y2="110" stroke="#5a8a5e" stroke-width="2"/>
+
+      <!-- 路線點 1: 吉野駅 -->
+      <circle cx="80" cy="430" r="12" fill="#fff" stroke="#3a2e2e" stroke-width="2"/>
+      <text x="80" y="435" font-size="14" font-weight="700" text-anchor="middle" fill="#3a2e2e">🚶</text>
+      <text x="80" y="460" font-size="12" font-weight="700" text-anchor="middle" fill="#3a2e2e">吉野駅</text>
+      <text x="80" y="475" font-size="10" text-anchor="middle" fill="#8a7070">約230m</text>
+
+      <!-- 路線點 2: 金峯山寺 -->
+      <circle cx="180" cy="385" r="12" fill="#fde8ef" stroke="#d45f7f" stroke-width="2"/>
+      <text x="180" y="390" font-size="14" text-anchor="middle">⛩</text>
+      <text x="180" y="410" font-size="11" font-weight="700" text-anchor="middle" fill="#3a2e2e">金峯山寺</text>
+      <text x="180" y="423" font-size="10" text-anchor="middle" fill="#8a7070">約370m</text>
+
+      <!-- 路線點 3: 花矢倉展望台 -->
+      <circle cx="250" cy="350" r="12" fill="#fde8ef" stroke="#d45f7f" stroke-width="2"/>
+      <text x="250" y="355" font-size="14" text-anchor="middle">📷</text>
+      <text x="250" y="375" font-size="11" font-weight="700" text-anchor="middle" fill="#3a2e2e">花矢倉</text>
+      <text x="250" y="388" font-size="10" text-anchor="middle" fill="#8a7070">約450m</text>
+
+      <!-- 路線點 4: 奧千本口 -->
+      <circle cx="330" cy="310" r="12" fill="#e8f5e9" stroke="#5a8a5e" stroke-width="2"/>
+      <text x="330" y="315" font-size="14" text-anchor="middle">🚌</text>
+      <text x="330" y="335" font-size="11" font-weight="700" text-anchor="middle" fill="#3a2e2e">奧千本口</text>
+      <text x="330" y="348" font-size="10" text-anchor="middle" fill="#8a7070">約550m</text>
+
+      <!-- 路線點 5: 金峯神社 -->
+      <circle cx="400" cy="270" r="12" fill="#e8f5e9" stroke="#5a8a5e" stroke-width="2"/>
+      <text x="400" y="275" font-size="14" text-anchor="middle">⛩</text>
+      <text x="400" y="295" font-size="11" font-weight="700" text-anchor="middle" fill="#3a2e2e">金峯神社</text>
+      <text x="400" y="308" font-size="10" text-anchor="middle" fill="#8a7070">約650m</text>
+
+      <!-- 路線點 6: 青根ヶ峰 -->
+      <circle cx="500" cy="220" r="12" fill="#e8f5e9" stroke="#5a8a5e" stroke-width="2"/>
+      <text x="500" y="225" font-size="14" text-anchor="middle">🏔</text>
+      <text x="500" y="245" font-size="11" font-weight="700" text-anchor="middle" fill="#3a2e2e">青根ヶ峰</text>
+      <text x="500" y="258" font-size="10" text-anchor="middle" fill="#8a7070">858m</text>
+
+      <!-- 路線點 7: 四寸岩山 -->
+      <circle cx="650" cy="180" r="12" fill="#e8f5e9" stroke="#5a8a5e" stroke-width="2"/>
+      <text x="650" y="185" font-size="14" text-anchor="middle">🌿</text>
+      <text x="650" y="205" font-size="11" font-weight="700" text-anchor="middle" fill="#3a2e2e">四寸岩山</text>
+      <text x="650" y="218" font-size="10" text-anchor="middle" fill="#8a7070">約1235m</text>
+
+      <!-- 路線點 8: 足摺茶屋跡（折返點） -->
+      <circle cx="750" cy="195" r="14" fill="#ff6b6b" stroke="#d45f7f" stroke-width="3"/>
+      <text x="750" y="202" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">🎯</text>
+      <text x="750" y="220" font-size="11" font-weight="700" text-anchor="middle" fill="#d45f7f">足摺茶屋跡</text>
+      <text x="750" y="233" font-size="10" text-anchor="middle" fill="#d45f7f">（折返點）</text>
+      <text x="750" y="246" font-size="10" text-anchor="middle" fill="#8a7070">約1190m</text>
+
+      <!-- 返程箭頭 -->
+      <path d="M 750 250 Q 500 350 80 430" fill="none" stroke="#888" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#arrowhead)"/>
+      <text x="400" y="340" font-size="11" fill="#888" font-style="italic">← 返程</text>
+
+      <!-- 箭頭定義 -->
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+          <polygon points="0 0, 10 3, 0 6" fill="#888"/>
+        </marker>
+      </defs>
+
+      <!-- 時間標記 -->
+      <text x="80" y="320" font-size="10" fill="#666" text-anchor="middle">08:00</text>
+      <text x="250" y="300" font-size="10" fill="#666" text-anchor="middle">09:15</text>
+      <text x="400" y="240" font-size="10" fill="#666" text-anchor="middle">10:00</text>
+      <text x="650" y="150" font-size="10" fill="#666" text-anchor="middle">11:30</text>
+      <text x="750" y="160" font-size="10" font-weight="700" fill="#d45f7f" text-anchor="middle">12:00</text>
+    </svg>
+
+    <!-- 地圖連結 -->
+    <div class="map-btn-group">
+      <a class="map-btn map-btn-google"
+         href="https://www.google.com/maps/dir/吉野駅,奈良県/金峯神社,吉野町/足摺茶屋跡/@34.38,135.86,13z"
+         target="_blank">
+        🗺 Google Maps 查看路線
+      </a>
+      <a class="map-btn map-btn-yamap"
+         href="https://yamap.com/tags/40164/activities"
+         target="_blank">
+        🏔 YAMAP 吉野山活動記錄
+      </a>
+      <a class="map-btn" style="background:#ff6b00; color:#fff;"
+         href="https://yamap.com/maps/494/activities"
+         target="_blank">
+        🥾 YAMAP 大峯奧駈道活動記錄
+      </a>
+    </div>
+
+    <!-- Google Maps 嵌入地圖 -->
+    <iframe class="map-embed"
+      src="https://maps.google.com/maps?q=吉野山,奈良県吉野郡吉野町&t=p&z=13&output=embed"
+      allowfullscreen
+      loading="lazy"
+      title="吉野山 地圖">
+    </iframe>
+
+    <div class="trailmap-note">
+      ⚠️ <strong>女人結界提醒：</strong>女人結界在足摺宿更深處，本次折返點（足摺茶屋跡）位於結界之前，女友可以一起走，完全沒有問題。
+    </div>
+  </div>
+
+  <!-- ════ 打包清單 ════ -->
+  <div id="packing" class="section-title"><span class="icon">🎒</span> 打包物品清單</div>
+
+  <div class="packing-grid">
+    <div class="pack-section">
+      <div class="pack-section-title hiking">🥾 登山裝備</div>
+      <ul class="pack-list">
+        <li>護踝登山鞋（必備）</li>
+        <li>登山背包（25〜30L）</li>
+        <li>登山杖（可選）</li>
+        <li>頭燈＋備用電池</li>
+        <li>地圖 / 離線地圖（YAMAP）</li>
+        <li>緊急救難哨</li>
+        <li>急救小藥包</li>
+        <li>雨具（輕量雨衣）</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <div class="pack-section-title clothing">👗 衣物</div>
+      <ul class="pack-list">
+        <li>排汗速乾長袖底層</li>
+        <li>保暖中層（抓絨 / 羽絨背心）</li>
+        <li>防風外套</li>
+        <li>登山長褲</li>
+        <li>厚登山襪 × 2雙</li>
+        <li>帽子（防曬 / 保暖）</li>
+        <li>手套（4月山上仍可能寒冷）</li>
+        <li>晚餐用換洗衣物</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <div class="pack-section-title food">🍱 飲食補給</div>
+      <ul class="pack-list">
+        <li>便當 / 飯糰（在吉野購買）</li>
+        <li>行動糧（能量棒、堅果）</li>
+        <li>巧克力 / 糖果（快速補糖）</li>
+        <li>水 1.5L 以上（二人份）</li>
+        <li>運動飲料（電解質補充）</li>
+        <li>保溫瓶（熱茶）</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <div class="pack-section-title misc">🧴 生活雜物</div>
+      <ul class="pack-list">
+        <li>防曬乳 SPF50+</li>
+        <li>薄荷凍 / 肌肉痠痛貼布</li>
+        <li>濕紙巾 / 面紙</li>
+        <li>行動電源</li>
+        <li>充電線（手機、相機）</li>
+        <li>相機 / GoPro</li>
+        <li>保鮮袋（垃圾自己帶走）</li>
+        <li>小毛巾</li>
+      </ul>
+    </div>
+    <div class="pack-section">
+      <div class="pack-section-title doc">📋 證件＆票券</div>
+      <ul class="pack-list">
+        <li>護照（女友）</li>
+        <li>IC 交通卡（Suica / ICOCA）</li>
+        <li>近鉄吉野フリーきっぷ</li>
+        <li>餐廳預約確認信</li>
+        <li>緊急聯絡卡（日文）</li>
+        <li>旅行保險資料</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ════ 備忘錄 ════ -->
+  <div id="memo" class="section-title"><span class="icon">📌</span> 備忘錄 · 重要提醒</div>
+
+  <div class="memo-box">
+    <h4>🍽 餐廳注意事項</h4>
+    <ul>
+      <li>牛カツ京都勝牛 — 現場排隊制，繁忙時間等候 15〜30 分，下午 5 點前後等待時間較短</li>
+      <li>麺屋猪一離れ — 人氣名店，建議在開店時間（17:00）前提早抵達排隊，才較有機會入座</li>
+      <li>地元口袋名單中多家需事先訂位，出發前建議透過食べログ或致電確認</li>
+      <li>吉野站附近有羅森便利商店，4/4 早晨務必在此購買山中午餐便當</li>
+    </ul>
+  </div>
+
+  <div class="memo-box">
+    <h4>🚃 交通・電車</h4>
+    <ul>
+      <li>4/4（週六）使用<strong>假日班次</strong>（土休日），出發前請至 <a href="https://www.kintetsu.co.jp/tetsudo/zenekijikoku.html" target="_blank" style="color:var(--navy)">近鐵官網</a> 確認最新時刻表</li>
+      <li>吉野山內春季限定巴士（往奧千本方向）也需事先確認發車時刻</li>
+      <li>近鐵「吉野自由車票」（竹田↔吉野來回＋山內巴士無限搭乘）最划算，可在窗口購買</li>
+      <li>4月賞櫻旺季車廂必定擁擠，請提早前往月台排隊候車</li>
+    </ul>
+  </div>
+
+  <div class="memo-box">
+    <h4>🏔 登山・安全</h4>
+    <ul>
+      <li>大天井岳前後有急坡，<strong>務必穿戴能保護腳踝的登山鞋</strong></li>
+      <li>請事先在 YAMAP 下載大峯奧駈道的離線地圖，山中無訊號</li>
+      <li>4月初山頂氣溫約 5〜12°C，保暖衣物不可少</li>
+      <li>越過足摺茶屋跡（折返點）即進入女人結界範圍，務必在此折返</li>
+      <li>山中無補給站，請充分準備飲水與行動糧食</li>
+      <li>目標：日落前 16:00 完成下山</li>
+    </ul>
+  </div>
+
+  <div class="memo-box">
+    <h4>🌸 吉野山・觀光</h4>
+    <ul>
+      <li>4月初是吉野山最旺季，金峯山寺周邊 9:00〜14:00 人潮最多，早去早回</li>
+      <li>建議 08:00 前抵達，可兼顧避開人潮與確保足夠的登山時間</li>
+      <li>花矢倉展望台「一目千本」是必拍景點，09:15 前後光線最佳</li>
+      <li>纜車在尖峰時段排隊極長，建議全程步行上山</li>
+    </ul>
+  </div>
+
+</div>
+
+<footer>
+  🌸 吉野山旅行計畫 2026.4 · 京都 × 吉野山 · 情侶賞花登山之旅 🌸<br>
+  <span style="font-size:0.78rem;">大峯奧駈道 · 足摺茶屋跡折返 · 全程約 8〜10小時</span>
+</footer>
+
+<!-- ════ BACK TO TOP BUTTON ════ -->
+<button id="back-to-top" title="回到頂端">🌸</button>
+
+<script>
+/* ── Sakura Falling Petals (header only) ── */
+(function() {
+  const canvas = document.getElementById('sakura-canvas');
+  const ctx = canvas.getContext('2d');
+  const header = canvas.parentElement;
+
+  function resize() {
+    canvas.width  = header.offsetWidth;
+    canvas.height = header.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const PETAL_COUNT = 22;
+  const colors = ['#f2a7bb', '#f9c5d1', '#fde8ef', '#e8a0b4', '#f7b8c8', '#fce4ec'];
+
+  function randomBetween(a, b) { return a + Math.random() * (b - a); }
+
+  function createPetal() {
+    return {
+      x: randomBetween(0, header.offsetWidth),
+      y: randomBetween(-50, -5),
+      size: randomBetween(6, 14),
+      speedY: randomBetween(0.8, 2.0),
+      speedX: randomBetween(-0.5, 0.5),
+      angle: randomBetween(0, Math.PI * 2),
+      angleSpeed: randomBetween(-0.015, 0.015),
+      sway: randomBetween(0.3, 1.1),
+      swayOffset: randomBetween(0, Math.PI * 2),
+      swaySpeed: randomBetween(0.01, 0.025),
+      opacity: randomBetween(0.5, 0.85),
+      color: colors[Math.floor(Math.random() * colors.length)]
+    };
+  }
+
+  let petals = Array.from({ length: PETAL_COUNT }, createPetal);
+
+  function drawPetal(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.angle);
+    ctx.globalAlpha = p.opacity;
+    ctx.fillStyle = p.color;
+    ctx.beginPath();
+    const s = p.size;
+    for (let i = 0; i < 5; i++) {
+      const a = (i / 5) * Math.PI * 2;
+      ctx.ellipse(
+        Math.cos(a) * s * 0.45,
+        Math.sin(a) * s * 0.45,
+        s * 0.42, s * 0.25,
+        a, 0, Math.PI * 2
+      );
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+
+  function animate() {
+    const W = canvas.width;
+    const H = canvas.height;
+    ctx.clearRect(0, 0, W, H);
+    petals.forEach(p => {
+      p.swayOffset += p.swaySpeed;
+      p.x += p.speedX + Math.sin(p.swayOffset) * p.sway;
+      p.y += p.speedY;
+      p.angle += p.angleSpeed;
+
+      if (p.y > H + 15 || p.x < -15 || p.x > W + 15) {
+        Object.assign(p, createPetal());
+        p.y = randomBetween(-50, -5);
+        p.x = randomBetween(0, W);
+      }
+
+      drawPetal(p);
+    });
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+})();
+
+/* ── Back to Top Button ── */
+(function() {
+  const btn = document.getElementById('back-to-top');
+
+  // 相容所有瀏覽器：window.scrollY、pageYOffset、documentElement.scrollTop
+  function getScrollTop() {
+    return window.scrollY
+      || window.pageYOffset
+      || document.documentElement.scrollTop
+      || document.body.scrollTop
+      || 0;
+  }
+
+  function updateBtn() {
+    if (getScrollTop() > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }
+
+  // 同時監聽 window 和 document，覆蓋所有手機瀏覽器行為
+  window.addEventListener('scroll',   updateBtn, { passive: true });
+  document.addEventListener('scroll', updateBtn, { passive: true });
+  // 手機觸控捲動也觸發
+  document.addEventListener('touchmove', updateBtn, { passive: true });
+  document.addEventListener('touchend',  updateBtn, { passive: true });
+
+  btn.addEventListener('click', function() {
+    // 相容不支援 smooth 的舊版 Safari
+    try {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch(e) {
+      window.scrollTo(0, 0);
+    }
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  });
+})();
+</script>
+
+</body>
+</html>
