@@ -207,6 +207,15 @@
     }
     .place-cell { font-weight: 600; }
     .note-cell { color: var(--muted); font-size: 0.88rem; }
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      margin-bottom: 4px;
+    }
+    .table-scroll table {
+      min-width: 520px;
+    }
 
     /* ── TRANSPORT ── */
     .transport-block {
@@ -497,7 +506,6 @@
     @media (max-width: 600px) {
       header h1 { font-size: 1.5rem; }
       .schedule-table { font-size: 0.82rem; }
-      .note-cell { display: none; }
       .toc-list { grid-template-columns: 1fr 1fr; }
       .rest-card-header { flex-direction: column; align-items: flex-start; }
     }
@@ -597,7 +605,7 @@
   <div class="day-card">
     <div class="day-header pink">4月 2日（週四）或 4月 3日（週五）｜女友抵達日 · 京都散策</div>
     <div class="day-card-body">
-      <table class="schedule-table">
+      <div class="table-scroll"><table class="schedule-table">
         <thead>
           <tr><th>時間</th><th>地點 / 活動</th><th>備註</th></tr>
         </thead>
@@ -619,13 +627,14 @@
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 
   <div class="day-card">
     <div class="day-header green">4月 4日（週六）｜吉野山賞櫻 ＋ 大峯奧駈道登山</div>
     <div class="day-card-body">
-      <table class="schedule-table">
+      <div class="table-scroll"><table class="schedule-table">
         <thead>
           <tr><th>時間</th><th>地點</th><th>備註</th></tr>
         </thead>
@@ -737,6 +746,7 @@
           </tr>
         </tbody>
       </table>
+      </div>
       <div class="tips-box" style="margin-top:18px;">
         <h4>🥾 登山補充說明</h4>
         <ul>
@@ -804,7 +814,7 @@
 
   <div class="transport-block">
     <h3>▶ 去程：4月4日（週六）— 烏丸御池 始發路線</h3>
-    <table class="train-table">
+    <div class="table-scroll"><table class="train-table">
       <thead>
         <tr><th>時刻</th><th>駅</th><th>列車</th><th>備考</th></tr>
       </thead>
@@ -865,6 +875,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <div class="time-verify">
       ⚠️ <strong>時刻為概算值。</strong>2026 年 3 月 14 日班次改正後，出發前請務必確認最新時刻。
       👉 <a href="https://www.kintetsu.co.jp/tetsudo/zenekijikoku.html" target="_blank" style="color:var(--navy)">近鐵官方時刻表</a>
@@ -873,7 +884,7 @@
 
   <div class="transport-block">
     <h3>◀ 返程：4月4日（週六）— 吉野出發</h3>
-    <table class="train-table">
+    <div class="table-scroll"><table class="train-table">
       <thead>
         <tr><th>時刻</th><th>車站</th><th>列車</th><th>備考</th></tr>
       </thead>
@@ -910,6 +921,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <div class="time-verify">
       ⚠️ 時刻為概算值。春季吉野可能加開臨時列車，出發前請至官方網站確認。
     </div>
@@ -925,7 +937,7 @@
       <span class="route-arrow">→</span>
       <span class="route-step" style="background:var(--sakura-light); color:var(--sakura-deep);">🌸 吉野山站（上站）</span>
     </div>
-    <table class="train-table" style="margin-bottom:14px;">
+    <div class="table-scroll"><table class="train-table" style="margin-bottom:14px;">
       <thead>
         <tr><th>區間</th><th>所需時間</th><th>大人票價</th><th>兒童票價</th></tr>
       </thead>
@@ -944,7 +956,8 @@
         </tr>
       </tbody>
     </table>
-    <table class="train-table" style="margin-bottom:14px;">
+    </div>
+    <div class="table-scroll"><table class="train-table" style="margin-bottom:14px;">
       <thead>
         <tr><th>時段</th><th>運行班次（春季賞花期）</th></tr>
       </thead>
@@ -963,6 +976,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <ul class="transport-notes">
       <li>纜車從吉野駅步行 <strong>約3分鐘</strong> 可抵達千本口下站，單程僅需 3 分鐘即達中千本賞花區</li>
       <li>⚠️ 4月賞花旺季纜車排隊極長（有時超過 1 小時），若不想等可選擇步行上山（約 20 分鐘）</li>
@@ -976,7 +990,7 @@
   <div class="transport-block" style="border-left: 4px solid var(--green);">
     <h3>🚌 奥千本口 春季限定巴士</h3>
     <p style="margin:0 0 12px; color:#555;">賞花期間限定行駛的接駁巴士，可直達奥千本口，適合健行後搭乘下山。</p>
-    <table class="timetable">
+    <div class="table-scroll"><table class="timetable">
       <thead>
         <tr>
           <th>項目</th>
@@ -1002,6 +1016,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <ul class="transport-notes">
       <li>🌸 此為春季賞花期間限定班次，非全年運行</li>
       <li>⚠️ 賞花旺季（尤其4月上旬）巴士可能非常擁擠，請預留候車時間</li>
